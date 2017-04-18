@@ -1,0 +1,26 @@
+[{
+  "firstName": "Tyler",
+  "lastName": "Durden",
+  "reference": "Fight Club"
+},
+{
+  "_id": "578611d17c8a27dd5b329fd5",
+  "firstName": "Darth",
+  "lastName": "Vader",
+  "reference": "Star Wars"
+},
+{
+  "firstName": "Han",
+  "lastName": "Solo",
+  "reference": "Star Wars"
+},
+{
+  "firstName": "Ellen",
+  "lastName": "Ripley",
+  "reference": "Alien"
+},
+{
+  "firstName" : "Deez",
+  "lastName": "Nuts",
+  "reference": "Deez Nuts (Band)"
+}]

@@ -273,6 +273,27 @@ describe('gulp-mongodb-data', function () {
     stream.write(fixture('test/fixtures/customid-test.json'))
     stream.end()
   })
+
+  it('should use update objects if findAndUpdate is true', function (done) {
+    var stream = mongodbData({findAndUpdateMany: true})
+
+    stream.on('data', function () {
+      var adminDb = dbRef.admin()
+      adminDb.listDatabases(function (err, result) {
+        if (err) throw err
+        async.some(result.databases, function (db, cb) {
+          cb(null, db.name === 'nope')
+        }, function (err, result) {
+          if (err) throw err
+          result.should.be.true()
+          done()
+        })
+      })
+    })
+
+    stream.write(fixture('test/fixtures/update-users-test.json'))
+    stream.end()
+  })
 })
 
 function fixture (path) {
